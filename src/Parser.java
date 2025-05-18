@@ -1,5 +1,5 @@
 class Parser {
-    
+
     private Scanner scan;
     private Token currentToken;
 
@@ -16,36 +16,46 @@ class Parser {
         expr();
     }
 
-   private void match(TokenType t) {
+    private void match(TokenType t) {
         if (currentToken.type == t) {
             nextToken();
-        }else {
+        } else {
             throw new Error("syntax error");
         }
-   }
+    }
 
-   void expr() {
-        number();
+    void expr() {
+        term();
         oper();
     }
 
-void number () {
+    void term() {
+        if (currentToken.type == TokenType.NUMBER)
+            number();
+        else if (currentToken.type == TokenType.IDENT) {
+            System.out.println("push " + currentToken.lexeme);
+            match(TokenType.IDENT);
+        } else
+            throw new Error("syntax error");
+    }
+
+    void number() {
         System.out.println("push " + currentToken.lexeme);
         match(TokenType.NUMBER);
     }
 
-   void oper () {
+    void oper() {
         if (currentToken.type == TokenType.PLUS) {
             match(TokenType.PLUS);
-            number();
+            term();
             System.out.println("add");
             oper();
         } else if (currentToken.type == TokenType.MINUS) {
             match(TokenType.MINUS);
-            number();
+            term();
             System.out.println("sub");
             oper();
-        } 
+        }
     }
 
 }
