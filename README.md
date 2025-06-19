@@ -17,13 +17,18 @@ TokenType.java – Enumeração dos tipos de tokens possíveis (como LET, PRINT,
 ## ⚙️ Como funciona
 
 Análise léxica (Scanner): Converte o código-fonte em tokens.
+
 Análise sintática (Parser): Verifica a estrutura gramatical e emite instruções de execução simuladas.
+
 Execução simulada: Os comandos são impressos como simulação de um interpretador/compilador.
 
 ## 🛠️ Extensões possíveis
 Suporte a multiplicação e divisão.
+
 Adição de estruturas condicionais (if, else).
+
 Execução real (em vez de só imprimir comandos).
+
 Suporte a tipos como float, string, etc.
 
 ## 📃 Licença
