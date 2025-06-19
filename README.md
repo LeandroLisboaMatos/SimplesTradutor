@@ -1,18 +1,30 @@
 ## 🖥️ Mini Interpretador de Expressões
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Este projeto é uma implementação simples de um interpretador de linguagem de script em Java. Ele reconhece e executa comandos básicos de atribuição (let) e impressão (print) com expressões matemáticas contendo soma e subtração.
 
-## Folder Structure
+## 📂 Estrutura do Projeto
 
-The workspace contains two folders by default, where:
+Main.java – Contém o ponto de entrada da aplicação.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Parser.java – Analisa a entrada e gera os comandos equivalentes (interpretador).
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Scanner.java – Faz a análise léxica, convertendo caracteres em tokens.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Token.java – Representa um token com tipo e valor.
 
-## Dependency Management
+TokenType.java – Enumeração dos tipos de tokens possíveis (como LET, PRINT, NUMBER, etc).
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## ⚙️ Como funciona
+
+Análise léxica (Scanner): Converte o código-fonte em tokens.
+Análise sintática (Parser): Verifica a estrutura gramatical e emite instruções de execução simuladas.
+Execução simulada: Os comandos são impressos como simulação de um interpretador/compilador.
+
+## 🛠️ Extensões possíveis
+Suporte a multiplicação e divisão.
+Adição de estruturas condicionais (if, else).
+Execução real (em vez de só imprimir comandos).
+Suporte a tipos como float, string, etc.
+
+## 📃 Licença
+Este projeto é open-source e pode ser usado livremente para fins educacionais.
